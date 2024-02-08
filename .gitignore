@@ -16,3 +16,6 @@ docs/
 # python
 poetry.lock
 .venv/
+
+# miscellanous files
+vyper_contracts/venom.vy
