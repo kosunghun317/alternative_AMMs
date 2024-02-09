@@ -14,8 +14,11 @@ docs/
 .env
 
 # python
-poetry.lock
 .venv/
+__pycache__/
+poetry.lock
 
 # miscellanous files
-vyper_contracts/venom.vy
+.github/
+.vscode/
+references/
