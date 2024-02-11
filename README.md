@@ -1,66 +1,17 @@
-## Foundry
+# Alternative AMMs
 
-**Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**
+This is a project that contains two alternative AMMs to reduce the LVR. One is function-maximizing AMM introduced in cowswap's paper, and the other is dual pool AMM, motivated by A.Nezlobin's thread and Muffin finance.
 
-Foundry consists of:
+Both are written in vyper since the author hates curly brackets.
 
--   **Forge**: Ethereum testing framework (like Truffle, Hardhat and DappTools).
--   **Cast**: Swiss army knife for interacting with EVM smart contracts, sending transactions and getting chain data.
--   **Anvil**: Local Ethereum node, akin to Ganache, Hardhat Network.
--   **Chisel**: Fast, utilitarian, and verbose solidity REPL.
+The simulation code for their performance is basically copy & paste of codes written by A.Nezlobin and Atis E., with very little adjustments.
 
-## Documentation
+The design of overall contract structure is heavily affected by that of muffin and balancer.
 
-https://book.getfoundry.sh/
+The code style and references are mostly from snekmate, uniswap-v2-vyper contracts, and curve.
 
-## Usage
+Lastly the justification of on-chain batching is motivated by M.Resnick et al.'s paper on censorship-resistance of on-chain auction.
 
-### Build
+## Repository Structure
 
-```shell
-$ forge build
-```
-
-### Test
-
-```shell
-$ forge test
-```
-
-### Format
-
-```shell
-$ forge fmt
-```
-
-### Gas Snapshots
-
-```shell
-$ forge snapshot
-```
-
-### Anvil
-
-```shell
-$ anvil
-```
-
-### Deploy
-
-```shell
-$ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --private-key <your_private_key>
-```
-
-### Cast
-
-```shell
-$ cast <subcommand>
-```
-
-### Help
-
-```shell
-$ forge --help
-$ anvil --help
-$ cast --help
-```
+The repository is organized as follows: TBD

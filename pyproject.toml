@@ -18,6 +18,8 @@ python-dotenv = "^1.0.1"
 numpy = "^1.26.4"
 matplotlib = "^3.8.2"
 ing-theme-matplotlib = "^0.1.8"
+seaborn = "^0.13.2"
+numba = "^0.59.0"
 
 
 [build-system]
