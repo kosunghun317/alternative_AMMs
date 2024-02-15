@@ -15,3 +15,12 @@ Lastly the justification of on-chain batching is motivated by M.Resnick et al.'s
 ## Repository Structure
 
 The repository is organized as follows: TBD
+
+TODO: add links to each author and repository mentioned
+
+## Test
+
+```shell
+$ source .venv/bin/activate
+$ forge test --ffi -vvvv
+```

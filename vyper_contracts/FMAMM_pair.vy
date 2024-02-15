@@ -96,3 +96,30 @@ def approve(spender : address, amount : uint256) -> bool:
     self.allowance[msg.sender][spender] = amount
     log Approval(msg.sender, spender, amount)
     return True
+
+@external
+def mint(to: address, amount: uint256):
+    """
+    @dev Mints `amount` tokens and assigns them to `to`.
+    @param to The address of the recipient.
+    @param amount The amount of tokens to be minted.
+    """
+    assert msg.sender == self.vault
+
+    self.balanceOf[to] += amount
+    self.totalSupply += amount
+
+    log Transfer(empty(address), to, amount)
+
+@external
+def burn(_from: address, amount: uint256):
+    """
+    @dev Burns `amount` tokens from the caller.
+    @param amount The amount of tokens to be burned.
+    """
+    assert msg.sender == self.vault
+
+    self.balanceOf[_from] -= amount
+    self.totalSupply -= amount
+
+    log Transfer(_from, empty(address), amount)
