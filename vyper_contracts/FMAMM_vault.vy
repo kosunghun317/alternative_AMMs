@@ -49,6 +49,8 @@ def create_pool(_tokenX: address, _tokenY: address):
         address
     )
     pool_id: bytes32 = keccak256(_abi_encode(_tokenX, _tokenY))
+
+    assert self.pools[pool_id] == empty(address)
     self.pools[pool_id] = create_copy_of(POOL_TEMPLATE, salt=pool_id)
     # TODO: initialize pool contract
     # TODO: record the pool info
