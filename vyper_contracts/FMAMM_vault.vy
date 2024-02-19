@@ -37,7 +37,7 @@ def withdraw(token: address, amount: uint256):
 #         Pool Creation & Infos        #
 ########################################
 
-pool_template: address
+POOL_TEMPLATE: immutable(address)
 
 pools: HashMap[bytes32, address]  # pair -> pool
 
@@ -49,7 +49,7 @@ def create_pool(_tokenX: address, _tokenY: address):
         address
     )
     pool_id: bytes32 = keccak256(_abi_encode(_tokenX, _tokenY))
-    self.pools[pool_id] = create_copy_of(self.pool_template, salt=pool_id)
+    self.pools[pool_id] = create_copy_of(POOL_TEMPLATE, salt=pool_id)
     # TODO: initialize pool contract
     # TODO: record the pool info
     # TODO: add liquidity to pool
@@ -66,5 +66,5 @@ def create_pool(_tokenX: address, _tokenY: address):
 
 @external
 def __init__(_pool_template: address):
-    self.pool_template = _pool_template
+    POOL_TEMPLATE = _pool_template
     # TODO: add more configurations
